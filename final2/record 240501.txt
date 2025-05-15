@@ -1,0 +1,31 @@
+1 Create topo using topo.py:
+
+sudo mn --custom topo.py --topo bloomtopo --controller=none --link=tc
+
+2. xterm s1
+
+then run bloom filter on s1:
+
+python3 bloom_defender.py
+
+maybe you need to install mmh3 on virtual box, step:
+apt update
+apt install -y python3-pip python3-dev build-essential
+pip3 install mmh3
+
+3. xterm h2
+then run server on h2:
+python3 server_h2.py
+
+4. 添加流表，在没有控制器的情况下允许流量从任意端口转发到其他端口
+sh ovs-ofctl add-flow s1 priority=1,actions=flood
+
+5. xterm h1
+then run client on h1:
+python3 client_h1.py
+
+6.xterm h3
+then run attacker on h3:
+python3 attacker_h3.py
+
+
