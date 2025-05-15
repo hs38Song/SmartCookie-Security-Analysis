@@ -26,14 +26,13 @@ sudo mn --custom topo.py --topo bloomtopo --controller=none --link=tc
 ### 2. Open Xterm Windows (one per node)
 From the Mininet CLI:
 
-bash
-Copy
-Edit
+```bash
 xterm s1
 xterm h2
 xterm h1
 xterm h3
 xterm h4
+```
 ### 3. Enable Switch Flooding
 From the Mininet CLI:
 
@@ -44,42 +43,35 @@ sh ovs-ofctl add-flow s1 priority=1,actions=flood
 ### 4. Start Server and Defender
 In the h2 xterm:
 
-bash
-Copy
-Edit
+```bash
 python3 server_h2.py
+```
 In the s1 xterm:
-
-bash
-Copy
-Edit
+```bash
 python3 bloom_defender.py
+```
 ### 5. Start Client and Attackers
 In the h1 xterm (client):
 
-bash
-Copy
-Edit
+```bash
 python3 client_h1.py
+```
 In the h3 xterm (random attacker):
 
-bash
-Copy
-Edit
+```bash
 python3 attacker_h3.py
+```
 In the h4 xterm (accurate attacker):
 
-bash
-Copy
-Edit
+```bash
 python3 accurate_attacker_h4.py
+```
 Log Collection
 To automatically fetch logs from all hosts and the switch, run on the host VM:
 
-bash
-Copy
-Edit
+```bash
 ~/fetch_logs.sh
+```
 Logs will be collected into ~/experiment_logs/:
 
 client_h1.log
