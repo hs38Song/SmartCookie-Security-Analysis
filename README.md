@@ -96,4 +96,4 @@ accurate_attacker_h4.log: Targeted SYN flood with false positive tuple(s).
 ### Citation
 If using this code or setup, please cite our paper:
 
-Yifei Zhang, Yongyu Liu, Haodong Song. "Patching SmartCookie: Security Concerns of Split-Proxy Approaches." UIUC, 2024.
+Yifei Zhang, Yongyu Liu, Haodong Song, Zang Dexin. "Patching SmartCookie: Security Concerns of Split-Proxy Approaches." UIUC, 2025.
